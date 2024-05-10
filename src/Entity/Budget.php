@@ -32,6 +32,7 @@ class Budget
     private Collection $transactions;
 
     #[ORM\ManyToOne(inversedBy: 'budgets')]
+    #[ORM\JoinColumn(nullable: false)]
     private ?User $owner = null;
 
     public function __construct()

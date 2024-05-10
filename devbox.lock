@@ -66,6 +66,70 @@
         }
       }
     },
+    "php83Extensions.apcu@latest": {
+      "last_modified": "2024-04-19T21:36:04Z",
+      "resolved": "github:NixOS/nixpkgs/92d295f588631b0db2da509f381b4fb1e74173c5#php83Extensions.apcu",
+      "source": "devbox-search",
+      "version": "5.1.23",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/m8m3nh14i43h2in0y9aim6izcwqi1v5x-php-apcu-5.1.23",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/vlpjxvlsqjcxcph0iijddhwy2bjlwlvy-php-apcu-5.1.23-dev"
+            }
+          ],
+          "store_path": "/nix/store/m8m3nh14i43h2in0y9aim6izcwqi1v5x-php-apcu-5.1.23"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sjvdi2xwjg0pwr06kr7vx1k4sd9gwap4-php-apcu-5.1.23",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/1fi602fxpgpbbvp7qs39f60bbr6b9qg2-php-apcu-5.1.23-dev"
+            }
+          ],
+          "store_path": "/nix/store/sjvdi2xwjg0pwr06kr7vx1k4sd9gwap4-php-apcu-5.1.23"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/476qwpv2ngq3ppmkr1mzfazjms49gyyj-php-apcu-5.1.23",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/cdcv6sn4z0xcdp4s4bl8f0lsz784sxw3-php-apcu-5.1.23-dev"
+            }
+          ],
+          "store_path": "/nix/store/476qwpv2ngq3ppmkr1mzfazjms49gyyj-php-apcu-5.1.23"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/436ffx1h2gqij2j63iad4iqsib7bhdgp-php-apcu-5.1.23",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/a4m2c0cgz2wdz730mbv0szbwraqapsrx-php-apcu-5.1.23-dev"
+            }
+          ],
+          "store_path": "/nix/store/436ffx1h2gqij2j63iad4iqsib7bhdgp-php-apcu-5.1.23"
+        }
+      }
+    },
     "php83Packages.composer@latest": {
       "last_modified": "2024-04-21T04:20:59-04:00",
       "resolved": "github:NixOS/nixpkgs/f2d7a289c5a5ece8521dd082b81ac7e4a57c2c5c#php83Packages.composer",

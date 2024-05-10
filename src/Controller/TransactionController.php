@@ -6,13 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class HomeController extends AbstractController
+#[Route(path: '/transaction')]
+class TransactionController extends AbstractController
 {
-    public function __construct() {}
-
-    #[Route(path: '/', methods: 'GET')]
+    #[Route(path: '')]
     public function index(): Response
     {
-        return $this->render('home/index.html.twig');
+        return $this->render('budget/index.html.twig');
     }
 }

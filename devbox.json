@@ -4,6 +4,7 @@
     "php@8.3",
     "symfony-cli@latest",
     "php83Packages.composer@latest",
-    "nodejs@latest"
+    "nodejs@latest",
+    "php83Extensions.apcu@latest"
   ]
 }
