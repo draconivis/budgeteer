@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Budget Manager Home</h1>
+<a href="{{url('app_budget_new')}}"><button>Add Budget</button></a>
+
+<ul>
+    {% for budget in budgets %}
+    <li>
+        <h2>Budget for {{budget.startDate|format_datetime(pattern= 'd.M.')}} - {{budget.endDate|format_datetime(pattern= 'd.M.')}}</h2>
+        {% if budget.transactions|length > 0 %}
+        <h3>Transactions:</h3>
+        <ul>
+        {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date) %}
+            <li>{{transaction.date}}: {{transaction.value}} €</li>
+        {% endfor %}
+        {% endif %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
