@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
-
-{% block body %}
-<h1>Add a Budget</h1>
+{{ form_start(form, {'attr': {
+    'hx-post': path('app_budget_new'),
+    'hx-target': 'body',
+}}) }}
 {{form(form)}}
-{% endblock %}
+{{form_end(form)}}

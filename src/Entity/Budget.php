@@ -14,10 +14,13 @@ class Budget
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
-    #[ORM\Column]
-    private ?float $currentValue = null;
+    #[ORM\Column(nullable: false)]
+    private int $startingValue;
+
+    #[ORM\Column(nullable: false)]
+    private int $currentValue;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: false)]
     private \DateTimeInterface $startDate;
@@ -33,31 +36,46 @@ class Budget
 
     #[ORM\ManyToOne(inversedBy: 'budgets')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $owner = null;
+    private User $owner;
+
+    #[ORM\Column(nullable: false)]
+    private bool $deleted = false;
 
     public function __construct()
     {
         $this->transactions = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(string $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
 
         return $this;
     }
 
-    public function getCurrentValue(): ?float
+    public function getStartingValue(): int
+    {
+        return $this->startingValue;
+    }
+
+    public function setStartingValue(int $startingValue): static
+    {
+        $this->startingValue = $startingValue;
+
+        return $this;
+    }
+
+    public function getCurrentValue(): int
     {
         return $this->currentValue;
     }
 
-    public function setCurrentValue(float $currentValue): static
+    public function setCurrentValue(int $currentValue): static
     {
         $this->currentValue = $currentValue;
 
@@ -96,36 +114,26 @@ class Budget
         return $this->transactions;
     }
 
-    public function addTransaction(Transaction $transaction): static
-    {
-        if (!$this->transactions->contains($transaction)) {
-            $this->transactions->add($transaction);
-            $transaction->setBudget($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTransaction(Transaction $transaction): static
-    {
-        if ($this->transactions->removeElement($transaction)) {
-            // set the owning side to null (unless already changed)
-            if ($transaction->getBudget() === $this) {
-                $transaction->setBudget(null);
-            }
-        }
-
-        return $this;
-    }
-
-    public function getOwner(): ?User
+    public function getOwner(): User
     {
         return $this->owner;
     }
 
-    public function setOwner(?User $owner): static
+    public function setOwner(User $owner): static
     {
         $this->owner = $owner;
+
+        return $this;
+    }
+
+    public function isDeleted(): bool
+    {
+        return $this->deleted;
+    }
+
+    public function setDeleted(bool $deleted): static
+    {
+        $this->deleted = $deleted;
 
         return $this;
     }

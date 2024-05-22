@@ -16,10 +16,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
     #[ORM\Column(length: 180)]
-    private ?string $username = null;
+    private string $username;
 
     /**
      * @var list<string> The user roles
@@ -31,7 +31,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
-    private ?string $password = null;
+    private string $password;
 
     #[ORM\Column(length: 100, nullable: true)]
     private ?string $name = null;
@@ -39,7 +39,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var Collection<int, Budget>
      */
-    #[ORM\OneToMany(targetEntity: Budget::class, mappedBy: 'user', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Budget::class, mappedBy: 'owner', orphanRemoval: true)]
     private Collection $budgets;
 
     public function __construct()
@@ -47,12 +47,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->budgets = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getUsername(): ?string
+    public function getUsername(): string
     {
         return $this->username;
     }
@@ -140,27 +140,5 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getBudgets(): Collection
     {
         return $this->budgets;
-    }
-
-    public function addBudget(Budget $budget): static
-    {
-        if (!$this->budgets->contains($budget)) {
-            $this->budgets->add($budget);
-            $budget->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeBudget(Budget $budget): static
-    {
-        if ($this->budgets->removeElement($budget)) {
-            // set the owning side to null (unless already changed)
-            if ($budget->getUser() === $this) {
-                $budget->setUser(null);
-            }
-        }
-
-        return $this;
     }
 }

@@ -1,0 +1,20 @@
+<div id='budget-{{budget.id}}'>
+    <h2>Budget for {{budget.startDate|format_datetime(pattern= 'd.M.')}} - {{budget.endDate|format_datetime(pattern= 'd.M.')}}</h2>
+    <div id="content-{{budget.id}}">
+        <div id="actions-{{budget.id}}">
+            {# <a href="{{url('app_budget_edit', {'id': budget.id})}}"><button>Edit</button></a> #}
+            <button hx-target="#content-{{budget.id}}" hx-swap="innerHTML" hx-get="{{url('app_budget_edit', {'id': budget.id})}}">Edit</button>
+            <button hx-target="body" hx-delete="{{url('app_budget_delete', {'id': budget.id})}}" hx-confirm="Are you sure you wish to delete this Budget?">Delete</button>
+        </div>
+        <div id="transactions-{{budget.id}}">
+            {% if budget.transactions|length > 0 %}
+            <h3>Transactions:</h3>
+            <ul>
+            {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date) %}
+                <li>{{transaction.date}}: {{transaction.value}} €</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>

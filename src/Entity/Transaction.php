@@ -13,33 +13,33 @@ class Transaction
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private int $id;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: false)]
+    private \DateTimeInterface $date;
 
-    #[ORM\Column]
-    private ?float $value = null;
+    #[ORM\Column(nullable: false)]
+    private int $value;
 
-    #[ORM\Column]
-    private ?bool $reimbursement = null;
+    #[ORM\Column(nullable: false)]
+    private bool $reimbursement = false;
 
     #[ORM\ManyToOne(inversedBy: 'transactions')]
-    private ?Budget $budget = null;
+    private Budget $budget;
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function setId(string $id): static
+    public function setId(int $id): static
     {
         $this->id = $id;
 
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): \DateTimeInterface
     {
         return $this->date;
     }
@@ -51,19 +51,19 @@ class Transaction
         return $this;
     }
 
-    public function getValue(): ?float
+    public function getValue(): int
     {
         return $this->value;
     }
 
-    public function setValue(float $value): static
+    public function setValue(int $value): static
     {
         $this->value = $value;
 
         return $this;
     }
 
-    public function isReimbursement(): ?bool
+    public function isReimbursement(): bool
     {
         return $this->reimbursement;
     }
@@ -75,12 +75,12 @@ class Transaction
         return $this;
     }
 
-    public function getBudget(): ?Budget
+    public function getBudget(): Budget
     {
         return $this->budget;
     }
 
-    public function setBudget(?Budget $budget): static
+    public function setBudget(Budget $budget): static
     {
         $this->budget = $budget;
 

@@ -13,10 +13,10 @@ class BudgetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('currentValue', MoneyType::class)
+            ->add('startingValue', MoneyType::class, ['divisor' => 100])
             ->add('startDate', DateType::class)
             ->add('endDate', DateType::class)
-            ->add('save', SubmitType::class)
+            ->add('save', SubmitType::class/* , ['attr' => ['hx-target' => "#content-{$options['data']->getId()}"]] */)
         ;
     }
 }

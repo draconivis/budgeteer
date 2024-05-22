@@ -3,12 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Budget;
-use App\Entity\Transaction;
 use App\Form\Type\BudgetType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route(path: '/budget')]
@@ -23,7 +23,7 @@ class BudgetController extends AbstractController
         return $this->redirectToRoute('app_budget_dashboard');
     }
 
-    #[Route(path: '/dash')]
+    #[Route(path: '/dash', methods: 'GET')]
     public function dashboard(): Response
     {
         /** @var Budget[] $budgets */
@@ -32,10 +32,12 @@ class BudgetController extends AbstractController
             ->from(Budget::class, 'b')
             ->leftJoin('b.transactions', 't')
             ->where('b.owner = :userId')
-            ->andWhere('b.startDate <= :now')
-            ->andWhere('b.endDate >= :now')
+            ->andWhere('b.deleted = false')
+            ->andWhere('b.startDate <= :startDate')
+            ->andWhere('b.endDate >= :endDate')
             ->setParameter('userId', $this->getUser())
-            ->setParameter('now', new \DateTime())
+            ->setParameter('startDate', new \DateTime('today'))
+            ->setParameter('endDate', new \DateTime('tomorrow'))
             ->getQuery()->getResult()
         ;
 
@@ -43,41 +45,69 @@ class BudgetController extends AbstractController
         return $this->render('budget/dashboard.html.twig', ['budgets' => $budgets]);
     }
 
-    #[Route(path: '/{year}')]
-    public function showBudgetByYear(): Response
-    {
-        // This should show all months of that year
-        return $this->render('budget/byYear.html.twig');
-    }
-
-    #[Route(path: '/{year}/{month}')]
-    public function showBudgetByYearAndMonth(): Response
-    {
-        // This should show a detailed view of the current month
-        return $this->render('budget/byYearAndMonth.html.twig');
-    }
-
-    #[Route(path: '/new', priority: 10)]
+    #[Route(path: '/new', methods: ['GET', 'POST'], priority: 10)]
     public function new(Request $request): Response
     {
         $budget = new Budget();
-        // $budget->setOwner($this->getUser());
 
         $form = $this->createForm(BudgetType::class, $budget);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $budget->setOwner($this->getUser());
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            // $budget = $form->getData();
+            $budget->setOwner($this->getUser())
+                ->setCurrentValue($budget->getStartingValue())
+            ;
 
             $this->em->persist($budget);
             $this->em->flush();
 
-            return $this->redirectToRoute('app_budget_dashboard');
+            return $this->dashboard();
         }
 
         return $this->render('budget/new.html.twig', ['form' => $form]);
+    }
+
+    #[Route(path: '/edit/{id}', methods: ['GET', 'PATCH'], priority: 10)]
+    public function edit(Request $request, int $id): Response
+    {
+        $budget = $this->em->getRepository(Budget::class)->findOneBy(['id' => $id, 'deleted' => false]);
+        if (!$budget instanceof Budget) {
+            throw new NotFoundHttpException("Budget with id '{$id}' not found!");
+        }
+
+        $form = $this->createForm(
+            BudgetType::class,
+            $budget,
+            ['action' => $this->generateUrl('app_budget_edit', ['id' => $budget->getId()])]
+        );
+
+        if ($request->isMethod('PATCH')) {
+            $form->submit($request->getPayload()->all($form->getName()), false);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $this->em->persist($budget);
+                $this->em->flush();
+
+                return $this->render('budget/budget.html.twig', ['budget' => $budget]);
+            }
+        }
+
+        return $this->render('budget/edit.html.twig', ['budget' => $budget, 'form' => $form]);
+    }
+
+    #[Route(path: '/delete/{id}', methods: 'DELETE', priority: 10)]
+    public function delete(Request $request, int $id): Response
+    {
+        $budget = $this->em->getRepository(Budget::class)->findOneBy(['id' => $id, 'deleted' => false]);
+        if (!$budget instanceof Budget) {
+            throw new NotFoundHttpException("Budget with id '{$id}' not found!");
+        }
+
+        $budget->setDeleted(true);
+
+        $this->em->persist($budget);
+        $this->em->flush();
+
+        return $this->dashboard();
     }
 }

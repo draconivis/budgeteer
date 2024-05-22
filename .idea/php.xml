@@ -323,6 +323,7 @@
       <path value="$PROJECT_DIR$/.devbox/nix/profile/default/share/php/composer/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/.devbox/nix/profile/default/share/php/composer/vendor/justinrainbow/json-schema" />
       <path value="$PROJECT_DIR$/.devbox/nix/profile/default/share/php/composer/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
