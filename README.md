@@ -5,41 +5,53 @@ A simple webapp to track finances
 ## TODO
 
 - [x] add budget entity
-- [ ] basic crud of transactions
-  - [ ] create
-  - [ ] read
-  - [ ] update
-  - [ ] delete
-- [ ] transactions can be assigned to a budget
-- [ ] transactions are deducted from budget
-  - [ ] normal ones are substracted
-  - [ ] reimbursements are added back
+- [x] basic crud of transactions
+  - [x] create
+  - [x] read
+  - [x] update
+  - [x] delete
+- [x] transactions are assigned to the budget
+- [x] transactions are deducted from budget
+  - [x] normal ones are substracted
+  - [x] reimbursements are added back
 - [ ] budget dashboard
-  - [ ] list of all transactions
-  - [ ] transactions have edit/delete button
+  - [x] list of all transactions
+  - [x] transactions have edit/delete button
   - [ ] total view of spending / reimbursement
+- [ ] make everything look nice
+  - [ ] navigation
+    - [ ] logo
+    - [ ] page links
+  - [ ] footer
+    - [ ] copyright?
+    - [ ] links
+  - [ ] dashboard
+    - [ ] nice header with current budget value
+    - [ ] every transaction is a element of the structure (table? list? grid?)
+    - [ ] transaction is colored based on the impact on the budget (red / green?)
+
+for later
+- [ ] budget graph
+  - [ ] graph is disaplyed next to the budget value
+  - [ ] transaction of the last seven days are used
+  - [ ] grouped by day + hours
+- [ ] tagging
+  - [ ] there are tags that can be assigned to transactions
+  - [ ] can be assigned at transaction creation or added afterwards
+  - [ ] multiple tags can be assigned
+  - [ ] input field
+    - [ ] entering something fuzzy finds existing tags
+    - [ ] user can select one of the existing ones
+    - [ ] if no matches are found, the entered value becomes a new tag
+- [ ] i18n
+  - [ ] user can switch between english/german
+  - [ ] every text is translated
+  - [ ] routes? (probably not)
+- [ ] dark mode
+  - [ ] user can switch between light/dark mode
+- [ ] 
   - [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-
-## Requirements
-
-### MVP
-- [ ] ONE continuous budget
-  - one "user" per instance
-  - no start / end date
-  - CANNOT be edited directly
-- [ ] User can track expenses / reimbursements
-  - These count against the budget
-
-### Further
-- [ ] profiles
-   - user can switch between profiles
-- [ ] transaction tagging
-- [ ] data visualization
-  - overview of historical data
-  - analysis of data
+    - [ ] 
 
 ## Technology
 - Symfony (duh)
