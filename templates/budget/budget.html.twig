@@ -1,5 +1,6 @@
 <div id='budget-{{budget.id}}'>
     <h2>Budget for {{budget.startDate|format_datetime(pattern= 'd.M.')}} - {{budget.endDate|format_datetime(pattern= 'd.M.')}}</h2>
+    <h3>Current amount: {{budget.currentValue / 100}} €</h3>
     <div id="content-{{budget.id}}">
         <div id="actions-{{budget.id}}">
             {# <a href="{{url('app_budget_edit', {'id': budget.id})}}"><button>Edit</button></a> #}

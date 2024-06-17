@@ -31,11 +31,9 @@ class BudgetController extends AbstractController
             ->select('b')
             ->from(Budget::class, 'b')
             ->leftJoin('b.transactions', 't')
-            ->where('b.owner = :userId')
-            ->andWhere('b.deleted = false')
+            ->where('b.deleted = false')
             ->andWhere('b.startDate <= :startDate')
             ->andWhere('b.endDate >= :endDate')
-            ->setParameter('userId', $this->getUser())
             ->setParameter('startDate', new \DateTime('today'))
             ->setParameter('endDate', new \DateTime('tomorrow'))
             ->getQuery()->getResult()
@@ -54,10 +52,7 @@ class BudgetController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $budget->setOwner($this->getUser())
-                ->setCurrentValue($budget->getStartingValue())
-            ;
-
+            $budget->setCurrentValue($budget->getStartingValue());
             $this->em->persist($budget);
             $this->em->flush();
 
