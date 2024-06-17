@@ -3,6 +3,7 @@
 {% block body %}
     <h1>Budget Dashboard</h1>
     <h2 id='budget-value'>Current amount: {{budget.currentValue / 100}} €</h2>
+    <p><span style="color: red"><i class="fa-solid fa-arrow-trend-down"></i> Total Spendings: {{totalSpendings}}€</span> | <span style="color: green"><i class="fa-solid fa-arrow-trend-up"></i> Total Gains: {{totalGains}}€</span></p>
     <div id="add-transaction">
         <button hx-swap="outerHTML" hx-get="{{ url('app_transaction_new') }}">Add Transaction</button>
     </div>

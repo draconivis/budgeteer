@@ -104,7 +104,7 @@ class TransactionController extends AbstractController
                     );
                 }
 
-                return $this->render('transaction/transactionUpdate.html.twig', ['transaction' => $transaction, 'budget' => $this->budget]);
+                return $this->render('transaction/transactionUpdate.html.twig', ['transaction' => $transaction, 'budget' => $this->budget, 'update' => true]);
             }
         }
 
@@ -132,6 +132,6 @@ class TransactionController extends AbstractController
 
         $transaction->setDeleted(true);
 
-        return new Response();
+        return $this->render('budget/currentValueUpdate.html.twig', ['budget' => $this->budget]);
     }
 }

@@ -6,6 +6,7 @@ import './bootstrap.js';
  * which should already be in your base.html.twig.
  */
 import './styles/app.css';
+import './fontawesome/css/all.css';
 import 'htmx.org';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
