@@ -1,12 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Budget Manager Home</h1>
-    <div id="add-budget">
-        <button hx-swap="outerHTML" hx-get="{{ url('app_budget_new') }}">Add Budget</button>
+    <h1>Budget Dashboard</h1>
+    <h2 id='budget-value'>Current amount: {{budget.currentValue / 100}} €</h2>
+    <div id="add-transaction">
+        <button hx-swap="outerHTML" hx-get="{{ url('app_transaction_new') }}">Add Transaction</button>
     </div>
-
-    {% for budget in budgets %}
-        {% include "budget/budget.html.twig" %}
-    {% endfor %}
+    <div id="budget-transactions">
+        {% if budget.transactions|length > 0 %}
+        <h3>Transactions:</h3>
+        <ul>
+        {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date) %}
+            {% if not transaction.deleted %}{% include('transaction/transaction.html.twig') %}{% endif %}
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
 {% endblock %}

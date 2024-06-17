@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\TransactionRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TransactionRepository::class)]
@@ -15,9 +14,6 @@ class Transaction
     #[ORM\Column]
     private int $id;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: false)]
-    private \DateTimeInterface $date;
-
     #[ORM\Column(nullable: false)]
     private int $value;
 
@@ -26,6 +22,12 @@ class Transaction
 
     #[ORM\ManyToOne(inversedBy: 'transactions')]
     private Budget $budget;
+
+    #[ORM\Column(length: 25)]
+    private string $date;
+
+    #[ORM\Column]
+    private bool $deleted = false;
 
     public function getId(): int
     {
@@ -39,14 +41,14 @@ class Transaction
         return $this;
     }
 
-    public function getDate(): \DateTimeInterface
+    public function getDate(): \DateTime
     {
-        return $this->date;
+        return new \DateTime($this->date);
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setDate(\DateTime $date): static
     {
-        $this->date = $date;
+        $this->date = $date->format(DATE_ATOM);
 
         return $this;
     }
@@ -83,6 +85,18 @@ class Transaction
     public function setBudget(Budget $budget): static
     {
         $this->budget = $budget;
+
+        return $this;
+    }
+
+    public function isDeleted(): ?bool
+    {
+        return $this->deleted;
+    }
+
+    public function setDeleted(bool $deleted): static
+    {
+        $this->deleted = $deleted;
 
         return $this;
     }

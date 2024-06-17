@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <title>{% block title %}Budgeteer{% endblock %}</title>
         <link rel="icon" href="{{asset('images/favicon.svg')}}">
-        {# <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script> #}
         {% block stylesheets %}
         {% endblock %}
 
@@ -15,8 +14,8 @@
     <body>
         <nav>
             <ul>
-                <li><a href="{{url('app_home_index')}}">Home</a></li>
-                <li><a href="{{url('app_budget_dashboard')}}">Budget manager</a></li>
+                <li><a href="{{url('app_home_home')}}">Home</a></li>
+                <li><a href="{{url('app_budget_dashboard')}}">Budget dashboard</a></li>
             </ul>
         </nav>
         {% block body %}{% endblock %}

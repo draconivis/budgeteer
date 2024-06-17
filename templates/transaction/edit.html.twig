@@ -1,0 +1,6 @@
+{{ form_start(form, {'attr': {
+    'hx-patch': path('app_transaction_edit', {'id': transaction.id}),
+    'hx-target': '#transaction-'~transaction.id,
+}}) }}
+{{form(form)}}
+{{form_end(form)}}
