@@ -1,5 +1,0 @@
-{
-  "twiggy.framework": "symfony",
-  "twiggy.phpExecutable": "php",
-  "twiggy.symfonyConsolePath": "bin/console"
-}
