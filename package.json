@@ -1,0 +1,7 @@
+{
+	"packageManager": "pnpm@9.4.0",
+	"dependencies": {
+		"htmx.org": "^1.9.12",
+		"@catppuccin/tailwindcss": "^0.1.6"
+	}
+}

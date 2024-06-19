@@ -17,7 +17,7 @@ A simple webapp to track finances
 - [ ] budget dashboard
   - [x] list of all transactions
   - [x] transactions have edit/delete button
-  - [ ] total view of spending / reimbursement
+  - [x] total view of spending / reimbursement
 - [ ] make everything look nice
   - [ ] navigation
     - [ ] logo

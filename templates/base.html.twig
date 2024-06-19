@@ -5,19 +5,15 @@
         <title>{% block title %}Budgeteer{% endblock %}</title>
         <link rel="icon" href="{{asset('images/favicon.svg')}}">
         {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
         {% endblock %}
 
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="{{url('app_home_home')}}">Home</a></li>
-                <li><a href="{{url('app_budget_dashboard')}}">Budget dashboard</a></li>
-            </ul>
-        </nav>
+    <body class="mocha bg-base text-text">
+        {% block nav %}{% endblock %}
         {% block body %}{% endblock %}
         <footer>
     </body>
