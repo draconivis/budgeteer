@@ -1,37 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block nav %}
-<nav>
-    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-        <div class="flex flex-shrink-0 items-center">
-            <img class="h-8 w-auto" src="{{asset('images/favicon.svg')}}" alt="Budgeteer">
-            <div class="hidden sm:ml-6 sm:block">
-                <div class="flex space-x-4">
-                    <a href="{{path('app_home_home')}}" class="rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                    <a href="{{path('app_budget_dashboard')}}" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-white">Dashboard</a>
-                </div>
+{% block body %}
+    <div class="flex justify-center">
+        <div class="flex flex-col w-9/12 h-svh">
+            <h1 class="text-2xl font-bold mb-4">Budget Dashboard</h1>
+            <h2 class="text-xl font-semibold mb-4" id='budget-value'>Current amount: {{ budget.currentValue / 100 }}
+                €</h2>
+            <p><span class="text-ctp-red"><i
+                            class="fa-solid fa-arrow-trend-down"></i> Total Spendings: {{ totalSpendings }}€</span> |
+                <span class="text-ctp-green"><i
+                            class="fa-solid fa-arrow-trend-up"></i> Total Gains: {{ totalGains }}€</span></p>
+            <div id="add-transaction" class="mt-4">
+                <button class="bg-ctp-surface2 text-ctp-blue rounded border border-ctp-surface0 p-1" hx-swap="outerHTML"
+                        hx-get="{{ url('app_transaction_new') }}">
+                    <i class="fa-solid fa-plus"></i> Add Transaction
+                </button>
+            </div>
+            <div id="budget-transactions">
+                {% if budget.transactions|length > 0 %}
+                    <h3 class="text-lg text-ctp-mauve font-normal mb-4">Transactions:</h3>
+                    <ul>
+                        {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date) %}
+                            {% if not transaction.deleted %}{% include('transaction/transaction.html.twig') %}{% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
         </div>
-    </div>
-</nav>
-
-{% endblock %}
-
-{% block body %}
-    <h1>Budget Dashboard</h1>
-    <h2 id='budget-value'>Current amount: {{budget.currentValue / 100}} €</h2>
-    <p><span style="color: red"><i class="fa-solid fa-arrow-trend-down"></i> Total Spendings: {{totalSpendings}}€</span> | <span style="color: green"><i class="fa-solid fa-arrow-trend-up"></i> Total Gains: {{totalGains}}€</span></p>
-    <div id="add-transaction">
-        <button hx-swap="outerHTML" hx-get="{{ url('app_transaction_new') }}">Add Transaction</button>
-    </div>
-    <div id="budget-transactions">
-        {% if budget.transactions|length > 0 %}
-        <h3>Transactions:</h3>
-        <ul>
-        {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date) %}
-            {% if not transaction.deleted %}{% include('transaction/transaction.html.twig') %}{% endif %}
-        {% endfor %}
-        </ul>
-        {% endif %}
     </div>
 {% endblock %}

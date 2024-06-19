@@ -9,6 +9,7 @@ module.exports = {
   },
   plugins: [
     require("@catppuccin/tailwindcss")({
+      prefix: "ctp",
       // which flavour of colours to use by default, in the `:root`
       defaultFlavour: "mocha",
     }),

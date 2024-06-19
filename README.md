@@ -19,9 +19,9 @@ A simple webapp to track finances
   - [x] transactions have edit/delete button
   - [x] total view of spending / reimbursement
 - [ ] make everything look nice
-  - [ ] navigation
-    - [ ] logo
-    - [ ] page links
+  - [x] navigation
+    - [x] logo
+    - [x] page links
   - [ ] footer
     - [ ] copyright?
     - [ ] links
