@@ -2,73 +2,73 @@
   "lockfile_version": "1",
   "packages": {
     "nodejs@latest": {
-      "last_modified": "2024-04-25T03:38:28-04:00",
+      "last_modified": "2024-06-18T11:39:17Z",
       "plugin_version": "0.0.2",
-      "resolved": "github:NixOS/nixpkgs/b0d52b31f7f4d80f8bf38f0253652125579c35ff#nodejs_22",
+      "resolved": "github:NixOS/nixpkgs/56fc115880db6498245adecda277ccdb33025bc2#nodejs_22",
       "source": "devbox-search",
-      "version": "22.0.0",
+      "version": "22.3.0",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/972dscdvkqhr81j2w1c74vlx2y4kfyzh-nodejs-22.0.0",
+              "path": "/nix/store/ig6c5qlywzk9f4zwf4hdpnyyx91vyqyc-nodejs-22.3.0",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/z5fns5qrp1s53kys1v0bxfz2lk407773-nodejs-22.0.0-libv8"
+              "path": "/nix/store/zg4vwp25r1v52vm2mxd6v64c1gr3jbj9-nodejs-22.3.0-libv8"
             }
           ],
-          "store_path": "/nix/store/972dscdvkqhr81j2w1c74vlx2y4kfyzh-nodejs-22.0.0"
+          "store_path": "/nix/store/ig6c5qlywzk9f4zwf4hdpnyyx91vyqyc-nodejs-22.3.0"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/6336bf8rx068rls9hw5q88bncc1baqgb-nodejs-22.0.0",
+              "path": "/nix/store/j2pwm80va47mfz7r5w1640rm6b9sp269-nodejs-22.3.0",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/ngvfmgm9bip87amcc522yb671a2zkpwd-nodejs-22.0.0-libv8"
+              "path": "/nix/store/j2lx401mqs3w7swg713irnnsfn88f8sx-nodejs-22.3.0-libv8"
             }
           ],
-          "store_path": "/nix/store/6336bf8rx068rls9hw5q88bncc1baqgb-nodejs-22.0.0"
+          "store_path": "/nix/store/j2pwm80va47mfz7r5w1640rm6b9sp269-nodejs-22.3.0"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/3776rlwv2q8fvgh6lhi44v0gxck1hkqx-nodejs-22.0.0",
+              "path": "/nix/store/3cqbw1xcmc0xml8s3ys7jviaxvqyjldy-nodejs-22.3.0",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/3vhll9yxmcabk6lv6yz14ixixpim5j4a-nodejs-22.0.0-libv8"
+              "path": "/nix/store/zk7izr97gl525arvyi4mfwxnhx5wl7hx-nodejs-22.3.0-libv8"
             }
           ],
-          "store_path": "/nix/store/3776rlwv2q8fvgh6lhi44v0gxck1hkqx-nodejs-22.0.0"
+          "store_path": "/nix/store/3cqbw1xcmc0xml8s3ys7jviaxvqyjldy-nodejs-22.3.0"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/nx76dx71yjni4bajdn9pshxqs38lkj29-nodejs-22.0.0",
+              "path": "/nix/store/zklzfb51mxs8pqdpwh6h51jkir50hq54-nodejs-22.3.0",
               "default": true
             },
             {
               "name": "libv8",
-              "path": "/nix/store/xakj3aq9bzxyvanpy6yfqg1ghmjjnkri-nodejs-22.0.0-libv8"
+              "path": "/nix/store/5dmd41abvjrw0chbz9m2yk27h61vpva9-nodejs-22.3.0-libv8"
             }
           ],
-          "store_path": "/nix/store/nx76dx71yjni4bajdn9pshxqs38lkj29-nodejs-22.0.0"
+          "store_path": "/nix/store/zklzfb51mxs8pqdpwh6h51jkir50hq54-nodejs-22.3.0"
         }
       }
     },
     "php83Extensions.apcu@latest": {
-      "last_modified": "2024-04-19T21:36:04Z",
-      "resolved": "github:NixOS/nixpkgs/92d295f588631b0db2da509f381b4fb1e74173c5#php83Extensions.apcu",
+      "last_modified": "2024-06-12T20:55:33Z",
+      "resolved": "github:NixOS/nixpkgs/a9858885e197f984d92d7fe64e9fff6b2e488d40#php83Extensions.apcu",
       "source": "devbox-search",
       "version": "5.1.23",
       "systems": {
@@ -76,105 +76,105 @@
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/m8m3nh14i43h2in0y9aim6izcwqi1v5x-php-apcu-5.1.23",
+              "path": "/nix/store/yq8dsj9l3p85hb8kf7qkz95p2myh325w-php-apcu-5.1.23",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/vlpjxvlsqjcxcph0iijddhwy2bjlwlvy-php-apcu-5.1.23-dev"
+              "path": "/nix/store/xgks4srpyjhff02mr5vpz4j7rw41bm5z-php-apcu-5.1.23-dev"
             }
           ],
-          "store_path": "/nix/store/m8m3nh14i43h2in0y9aim6izcwqi1v5x-php-apcu-5.1.23"
+          "store_path": "/nix/store/yq8dsj9l3p85hb8kf7qkz95p2myh325w-php-apcu-5.1.23"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/sjvdi2xwjg0pwr06kr7vx1k4sd9gwap4-php-apcu-5.1.23",
+              "path": "/nix/store/s3adwx2phirwfx135hz6pprpnj4xh97r-php-apcu-5.1.23",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/1fi602fxpgpbbvp7qs39f60bbr6b9qg2-php-apcu-5.1.23-dev"
+              "path": "/nix/store/iiyxhlj43rarwprn6j6fl8a21hxhw188-php-apcu-5.1.23-dev"
             }
           ],
-          "store_path": "/nix/store/sjvdi2xwjg0pwr06kr7vx1k4sd9gwap4-php-apcu-5.1.23"
+          "store_path": "/nix/store/s3adwx2phirwfx135hz6pprpnj4xh97r-php-apcu-5.1.23"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/476qwpv2ngq3ppmkr1mzfazjms49gyyj-php-apcu-5.1.23",
+              "path": "/nix/store/slx66f2xcwpk79z8lhi4w93whzvwr30k-php-apcu-5.1.23",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/cdcv6sn4z0xcdp4s4bl8f0lsz784sxw3-php-apcu-5.1.23-dev"
+              "path": "/nix/store/0b3snz1whfa8hbh94bbhif7xyskhpmnf-php-apcu-5.1.23-dev"
             }
           ],
-          "store_path": "/nix/store/476qwpv2ngq3ppmkr1mzfazjms49gyyj-php-apcu-5.1.23"
+          "store_path": "/nix/store/slx66f2xcwpk79z8lhi4w93whzvwr30k-php-apcu-5.1.23"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/436ffx1h2gqij2j63iad4iqsib7bhdgp-php-apcu-5.1.23",
+              "path": "/nix/store/11fwdfvdrpp3yczhzf6hrr6vbq59j7zl-php-apcu-5.1.23",
               "default": true
             },
             {
               "name": "dev",
-              "path": "/nix/store/a4m2c0cgz2wdz730mbv0szbwraqapsrx-php-apcu-5.1.23-dev"
+              "path": "/nix/store/g57my2v0mr3bndd7lbzix4kh0zp5wdlk-php-apcu-5.1.23-dev"
             }
           ],
-          "store_path": "/nix/store/436ffx1h2gqij2j63iad4iqsib7bhdgp-php-apcu-5.1.23"
+          "store_path": "/nix/store/11fwdfvdrpp3yczhzf6hrr6vbq59j7zl-php-apcu-5.1.23"
         }
       }
     },
     "php83Packages.composer@latest": {
-      "last_modified": "2024-04-21T04:20:59-04:00",
-      "resolved": "github:NixOS/nixpkgs/f2d7a289c5a5ece8521dd082b81ac7e4a57c2c5c#php83Packages.composer",
+      "last_modified": "2024-06-12T20:55:33Z",
+      "resolved": "github:NixOS/nixpkgs/a9858885e197f984d92d7fe64e9fff6b2e488d40#php83Packages.composer",
       "source": "devbox-search",
-      "version": "2.7.3",
+      "version": "2.7.7",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/zyrq3vcalqqrjr24yxpaisq93dr43scd-composer-2.7.3",
+              "path": "/nix/store/5q5zylcpvswm7kdkivr8mjm5pyan4rnf-composer-2.7.7",
               "default": true
             }
           ],
-          "store_path": "/nix/store/zyrq3vcalqqrjr24yxpaisq93dr43scd-composer-2.7.3"
+          "store_path": "/nix/store/5q5zylcpvswm7kdkivr8mjm5pyan4rnf-composer-2.7.7"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/0zhz2b8s4w40r9fm4x3vy266vng5x1zf-composer-2.7.3",
+              "path": "/nix/store/ddvnqwis9cg51nk4i08m71ydilwfp0ac-composer-2.7.7",
               "default": true
             }
           ],
-          "store_path": "/nix/store/0zhz2b8s4w40r9fm4x3vy266vng5x1zf-composer-2.7.3"
+          "store_path": "/nix/store/ddvnqwis9cg51nk4i08m71ydilwfp0ac-composer-2.7.7"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/b0bxyn7jjzps46s566k5lha7mqz02mjl-composer-2.7.3",
+              "path": "/nix/store/rm9r9dvmlz04805gpjkch960rjf898vl-composer-2.7.7",
               "default": true
             }
           ],
-          "store_path": "/nix/store/b0bxyn7jjzps46s566k5lha7mqz02mjl-composer-2.7.3"
+          "store_path": "/nix/store/rm9r9dvmlz04805gpjkch960rjf898vl-composer-2.7.7"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/s6jdgw78wdw6bmgwgchqksir9q02gjzi-composer-2.7.3",
+              "path": "/nix/store/jav7wjvlkwcjpfprsr4jvxxgyx3ssjnh-composer-2.7.7",
               "default": true
             }
           ],
-          "store_path": "/nix/store/s6jdgw78wdw6bmgwgchqksir9q02gjzi-composer-2.7.3"
+          "store_path": "/nix/store/jav7wjvlkwcjpfprsr4jvxxgyx3ssjnh-composer-2.7.7"
         }
       }
     },
@@ -228,9 +228,9 @@
       }
     },
     "postgresql@latest": {
-      "last_modified": "2024-06-09T00:38:05Z",
+      "last_modified": "2024-06-18T20:33:49Z",
       "plugin_version": "0.0.2",
-      "resolved": "github:NixOS/nixpkgs/3bcedce9f4de37570242faf16e1e143583407eab#postgresql",
+      "resolved": "github:NixOS/nixpkgs/37a45fb6993f14555f50b18fbcf4945b82a35707#postgresql",
       "source": "devbox-search",
       "version": "15.7",
       "systems": {
@@ -238,149 +238,149 @@
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/m29niq99rcvrm320ry4mwmcwppqxx00r-postgresql-15.7",
+              "path": "/nix/store/mq97pj52hqzjq7hhlqlcw8csc13zq4sf-postgresql-15.7",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/rgc065pnwami7m7l88md33mg7y25rbx9-postgresql-15.7-man",
+              "path": "/nix/store/dn2j72b9zzx9xiap494ymdy07qmd80ms-postgresql-15.7-man",
               "default": true
             },
             {
               "name": "doc",
-              "path": "/nix/store/yngqpn9iw1piif3wz3yvd3faw03r6jlg-postgresql-15.7-doc"
+              "path": "/nix/store/z1p0mdxywa481n7zby6axn4qnwizp3mp-postgresql-15.7-doc"
             },
             {
               "name": "lib",
-              "path": "/nix/store/kcmpv21v5w40lbcmiw9yr6yns16djavy-postgresql-15.7-lib"
+              "path": "/nix/store/kw5r2ns1g2dhc2a284f443al5c2bxmhq-postgresql-15.7-lib"
             }
           ],
-          "store_path": "/nix/store/m29niq99rcvrm320ry4mwmcwppqxx00r-postgresql-15.7"
+          "store_path": "/nix/store/mq97pj52hqzjq7hhlqlcw8csc13zq4sf-postgresql-15.7"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/dak013fyb7q7a5zp4k8f8id2icd1nb4j-postgresql-15.7",
+              "path": "/nix/store/if3jglx02jl6pndzlnmj01z5qimj68rf-postgresql-15.7",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/307zkn7b2pqfr7fbvrw48r8acdi490by-postgresql-15.7-man",
+              "path": "/nix/store/3a7wa3c3063scc99wp8b658sal65zfj5-postgresql-15.7-man",
               "default": true
             },
             {
+              "name": "lib",
+              "path": "/nix/store/kqkmksnwa0nq9hgfrl6zfjvnlld1dphb-postgresql-15.7-lib"
+            },
+            {
               "name": "debug",
-              "path": "/nix/store/7zb7d8akwd3g88004v7rvl86b5r5j890-postgresql-15.7-debug"
+              "path": "/nix/store/1r2nwaivz502z4ccviqayjr03ax8mgh2-postgresql-15.7-debug"
             },
             {
               "name": "doc",
-              "path": "/nix/store/wdf2nkg1h9z01yl9wyi9mhyg9fg2ynq2-postgresql-15.7-doc"
-            },
-            {
-              "name": "lib",
-              "path": "/nix/store/n44yy72rl2p55siz4h2f6csi6n5ki76a-postgresql-15.7-lib"
+              "path": "/nix/store/ydj29xsbv8y512rrpmk9dm4v9g5q3l3i-postgresql-15.7-doc"
             }
           ],
-          "store_path": "/nix/store/dak013fyb7q7a5zp4k8f8id2icd1nb4j-postgresql-15.7"
+          "store_path": "/nix/store/if3jglx02jl6pndzlnmj01z5qimj68rf-postgresql-15.7"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/ds495dsz1k14yyzmph7pxf37xjiqhnpk-postgresql-15.7",
+              "path": "/nix/store/hxvpx50n9885kacknjzl68z5kgjb0j1m-postgresql-15.7",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/fw4snkvhwysx7vf3y92v9hqv8xwr54ja-postgresql-15.7-man",
+              "path": "/nix/store/01n7x5k6r25z9dsqpwch0dp2k8108yrr-postgresql-15.7-man",
               "default": true
             },
             {
-              "name": "doc",
-              "path": "/nix/store/crrsp69hb9nwfn6qs30wddgm2lxa9l7n-postgresql-15.7-doc"
+              "name": "lib",
+              "path": "/nix/store/fw0gl6kdyjjgfl897dlwch2f7056bn4k-postgresql-15.7-lib"
             },
             {
-              "name": "lib",
-              "path": "/nix/store/z6wvd87iajac13vhdm1c0b4855aphzwy-postgresql-15.7-lib"
+              "name": "doc",
+              "path": "/nix/store/ziz1q10bqxwwpjq9lwjy2kqbys8aajfp-postgresql-15.7-doc"
             }
           ],
-          "store_path": "/nix/store/ds495dsz1k14yyzmph7pxf37xjiqhnpk-postgresql-15.7"
+          "store_path": "/nix/store/hxvpx50n9885kacknjzl68z5kgjb0j1m-postgresql-15.7"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/07s64wxjzk6z1glwxvl3yq81vdn42k40-postgresql-15.7",
+              "path": "/nix/store/w96w0h968yph4yq1zkk8frj6z64m551s-postgresql-15.7",
               "default": true
             },
             {
               "name": "man",
-              "path": "/nix/store/y2i038ql442nn3iqhx4lxsala5fkqpf4-postgresql-15.7-man",
+              "path": "/nix/store/iv86w5hrp64da15947d3vnd0b6msma1l-postgresql-15.7-man",
               "default": true
             },
             {
-              "name": "lib",
-              "path": "/nix/store/xb4h083j02mr2ix7pgj7iawxh2hk100l-postgresql-15.7-lib"
-            },
-            {
               "name": "debug",
-              "path": "/nix/store/0wyfjxk51chyzvvzv06aklxdcgdi0256-postgresql-15.7-debug"
+              "path": "/nix/store/7v0al17bc05rqsgn9ispnvbxwhlvr479-postgresql-15.7-debug"
             },
             {
               "name": "doc",
-              "path": "/nix/store/aydd0lh52si89mxm9rz5xzv3zs6gx8bl-postgresql-15.7-doc"
+              "path": "/nix/store/l6rqnqscmah399sgs4cav2k76gh6zx4l-postgresql-15.7-doc"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/bacd5acy2cw3ywym2k2s2br2rr10al3w-postgresql-15.7-lib"
             }
           ],
-          "store_path": "/nix/store/07s64wxjzk6z1glwxvl3yq81vdn42k40-postgresql-15.7"
+          "store_path": "/nix/store/w96w0h968yph4yq1zkk8frj6z64m551s-postgresql-15.7"
         }
       }
     },
     "symfony-cli@latest": {
-      "last_modified": "2024-04-19T17:36:04-04:00",
-      "resolved": "github:NixOS/nixpkgs/92d295f588631b0db2da509f381b4fb1e74173c5#symfony-cli",
+      "last_modified": "2024-06-16T13:15:37Z",
+      "resolved": "github:NixOS/nixpkgs/683aa7c4e385509ca651d49eeb35e58c7a1baad6#symfony-cli",
       "source": "devbox-search",
-      "version": "5.8.15",
+      "version": "5.9.1",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/a4cfdkx0jiy3giywg3gaip8lwmn8g6b9-symfony-cli-5.8.15",
+              "path": "/nix/store/16ix3f6v3ahbalqzzgmzv76y1nwmwlig-symfony-cli-5.9.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/a4cfdkx0jiy3giywg3gaip8lwmn8g6b9-symfony-cli-5.8.15"
+          "store_path": "/nix/store/16ix3f6v3ahbalqzzgmzv76y1nwmwlig-symfony-cli-5.9.1"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/19mzq0aaldk8i0qdswkxnlv21n742grd-symfony-cli-5.8.15",
+              "path": "/nix/store/72byv85ziikxwjyjs7ddsj4j38m9gmf1-symfony-cli-5.9.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/19mzq0aaldk8i0qdswkxnlv21n742grd-symfony-cli-5.8.15"
+          "store_path": "/nix/store/72byv85ziikxwjyjs7ddsj4j38m9gmf1-symfony-cli-5.9.1"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/fyx8w6fkj0mjgnwii6kanc5wjkhjcnk8-symfony-cli-5.8.15",
+              "path": "/nix/store/y4yg6k7nqaqzkinvg9a35gvfw38r000a-symfony-cli-5.9.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/fyx8w6fkj0mjgnwii6kanc5wjkhjcnk8-symfony-cli-5.8.15"
+          "store_path": "/nix/store/y4yg6k7nqaqzkinvg9a35gvfw38r000a-symfony-cli-5.9.1"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/v7zgra1hmz0rvl6h7w74v96vs54znmfr-symfony-cli-5.8.15",
+              "path": "/nix/store/68vljvymyycshml7g7lxqbx9bay9iscq-symfony-cli-5.9.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/v7zgra1hmz0rvl6h7w74v96vs54znmfr-symfony-cli-5.8.15"
+          "store_path": "/nix/store/68vljvymyycshml7g7lxqbx9bay9iscq-symfony-cli-5.9.1"
         }
       }
     }
