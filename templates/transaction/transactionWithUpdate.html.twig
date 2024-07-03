@@ -1,13 +1,8 @@
-<div id='transaction-{{transaction.id}}'>
-    <h4>Transaction #{{transaction.id}}</h4>
-    <div id='transaction-content-{{transaction.id}}'>
-        <p>value: {{transaction.value / 100}}</p>
-        <p>reimbursement? {{transaction.reimbursement}}</p>
-        <div id="actions-{{transaction.id}}">
-            <button hx-target="#transaction-content-{{transaction.id}}" hx-swap="innerHTML" hx-get="{{url('app_transaction_edit', {'id': transaction.id})}}">Edit</button>
-            <button hx-target="#transaction-{{transaction.id}}" hx-swap="outerHTML" hx-delete="{{url('app_transaction_delete', {'id': transaction.id})}}" hx-confirm="Are you sure you wish to delete this transaction?">Delete</button>
-        </div>
-    </div>
+<h4 class="font-bold">{{transaction.title}}</h4>
+<div id='transaction-content-{{transaction.id}}' class="flex justify-between">
+    <p class="w-1/2 {% if transaction.reimbursement %}text-ctp-green{% else %}text-ctp-red{% endif %}">{% if transaction.reimbursement %}+{% else %}-{% endif %}{{transaction.value / 100}}€</p>
+    <button hx-target="#transaction-content-{{transaction.id}}" hx-swap="innerHTML" hx-get="{{url('app_transaction_edit', {'id': transaction.id})}}">Edit</button>
+    <button hx-target="#transaction-{{transaction.id}}" hx-swap="outerHTML" hx-delete="{{url('app_transaction_delete', {'id': transaction.id})}}" hx-confirm="Are you sure you wish to delete this transaction?">Delete</button>
 </div>
 
 {% include 'budget/budgetValueUpdate.html.twig' %}

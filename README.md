@@ -14,7 +14,7 @@ A simple webapp to track finances
 - [x] transactions are deducted from budget
   - [x] normal ones are substracted
   - [x] reimbursements are added back
-- [ ] budget dashboard
+- [x] budget dashboard
   - [x] list of all transactions
   - [x] transactions have edit/delete button
   - [x] total view of spending / reimbursement
@@ -26,9 +26,12 @@ A simple webapp to track finances
     - [ ] copyright?
     - [ ] links
   - [ ] dashboard
-    - [ ] nice header with current budget value
-    - [ ] every transaction is a element of the structure (table? list? grid?)
-    - [ ] transaction is colored based on the impact on the budget (red / green?)
+    - [x] nice header with current budget value
+    - [x] every transaction is a element of the structure (table? list? grid?)
+    - [x] transaction is colored based on the impact on the budget (red / green?)
+    - [ ] style 'add transaction' form
+    - [ ] style 'edit transaction' form
+    - [ ] add cancel button to all forms
 
 for later
 - [ ] budget graph

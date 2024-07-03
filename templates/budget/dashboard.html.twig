@@ -3,14 +3,10 @@
 {% block body %}
     <div class="flex justify-center">
         <div class="flex flex-col w-9/12 h-svh">
-            <h1 class="text-2xl font-bold mb-4">Budget Dashboard</h1>
-            <h2 class="text-xl font-semibold mb-4" id='budget-value'>Current amount: {{ budget.currentValue / 100 }}
+            <h1 class="text-2xl font-bold my-4">Budget Dashboard</h1>
+            <h2 class="text-xl font-semibold" id='budget-value'>Current amount: {{ budget.currentValue / 100 }}
                 €</h2>
-            <p><span class="text-ctp-red"><i
-                            class="fa-solid fa-arrow-trend-down"></i> Total Spendings: {{ totalSpendings }}€</span> |
-                <span class="text-ctp-green"><i
-                            class="fa-solid fa-arrow-trend-up"></i> Total Gains: {{ totalGains }}€</span></p>
-            <div id="add-transaction" class="mt-4">
+            <div id="add-transaction" class="my-4">
                 <button class="bg-ctp-surface2 text-ctp-blue rounded border border-ctp-surface0 p-1" hx-swap="outerHTML"
                         hx-get="{{ url('app_transaction_new') }}">
                     <i class="fa-solid fa-plus"></i> Add Transaction
@@ -19,11 +15,11 @@
             <div id="budget-transactions">
                 {% if budget.transactions|length > 0 %}
                     <h3 class="text-lg text-ctp-mauve font-normal mb-4">Transactions:</h3>
-                    <ul>
-                        {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date) %}
+                    <div>
+                        {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date)|slice(0,10) %}
                             {% if not transaction.deleted %}{% include('transaction/transaction.html.twig') %}{% endif %}
                         {% endfor %}
-                    </ul>
+                    </div>
                 {% endif %}
             </div>
         </div>

@@ -36,27 +36,11 @@ class BudgetController extends AbstractController
             $this->em->flush();
         }
 
-        $totalSpendings = $totalGains = 0;
-        foreach ($budget->getTransactions() as $transaction) {
-            if (
-                !$transaction->isDeleted()
-                && new \DateTime('7 days ago') <= $transaction->getDate()
-                && new \DateTime() >= $transaction->getDate()
-                && $transaction->isReimbursement()
-            ) {
-                $totalGains += $transaction->getValue();
-            } else {
-                $totalSpendings += $transaction->getValue();
-            }
-        }
-
         // This should show an overview
         return $this->render(
             'budget/dashboard.html.twig',
             [
                 'budget' => $budget,
-                'totalSpendings' => $totalSpendings / 100,
-                'totalGains' => $totalGains / 100,
                 'update' => false,
             ]
         );
