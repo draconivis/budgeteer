@@ -29,6 +29,9 @@ class Transaction
     #[ORM\Column]
     private bool $deleted = false;
 
+    #[ORM\Column(length: 100)]
+    private string $title;
+
     public function getId(): int
     {
         return $this->id;
@@ -97,6 +100,18 @@ class Transaction
     public function setDeleted(bool $deleted): static
     {
         $this->deleted = $deleted;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): static
+    {
+        $this->title = $title;
 
         return $this;
     }
