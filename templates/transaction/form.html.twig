@@ -1,0 +1,28 @@
+{% if hxTarget == 'body' %}
+{{ form_start(form, {'attr': {
+    'hx-post': hxPost,
+    'hx-target': hxTarget,
+}}) }}
+{% else %}
+{{ form_start(form, {'attr': {
+    'hx-patch': hxPatch,
+    'hx-target': hxTarget,
+}}) }}
+{% endif %}
+<div>
+    {{ form_label(form.title) }}<br>
+    {{ form_widget(form.title, {'attr': {'class': 'bg-ctp-surface1 rounded px-3'}}) }}
+</div>
+<div>
+    {{ form_label(form.value) }}<br>
+    {{ form_widget(form.value, {'attr': {'class': 'bg-ctp-surface1 rounded px-3 w-28'}}) }} €
+</div>
+<div>
+    {{ form_label(form.date) }}<br>
+    {{ form_widget(form.date, {'attr': {'class': 'bg-ctp-surface1 rounded px-3'}}) }}
+</div>
+<div>
+    {{ form_label(form.reimbursement) }}<br>
+    {{ form_widget(form.reimbursement, {'attr': {'class': 'bg-ctp-surface1 rounded px-3'}}) }}
+</div>
+{{form_end(form)}}

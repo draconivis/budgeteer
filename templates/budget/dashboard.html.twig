@@ -16,7 +16,7 @@
                 {% if budget.transactions|length > 0 %}
                     <h3 class="text-lg text-ctp-mauve font-normal mb-4">Transactions:</h3>
                     <div>
-                        {% for transaction in budget.transactions|sort((a, b) => a.date <=> b.date)|slice(0,10) %}
+                        {% for transaction in budget.transactions|sort((a, b) => b.date <=> a.date)|slice(0,10) %}
                             {% if not transaction.deleted %}{% include('transaction/transaction.html.twig') %}{% endif %}
                         {% endfor %}
                     </div>

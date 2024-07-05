@@ -58,7 +58,25 @@ class TransactionController extends AbstractController
             return $this->redirectToRoute('app_budget_dashboard');
         }
 
-        return $this->render('transaction/new.html.twig', ['form' => $form]);
+        return $this->render(
+            'transaction/form.html.twig',
+            [
+                'form' => $form,
+                'hxPost' => $this->generateUrl('app_transaction_new'),
+                'hxTarget' => 'body',
+            ]
+        );
+    }
+
+    #[Route(path: '/{id}', methods: ['GET'], priority: 10)]
+    public function get(Request $request, int $id): Response
+    {
+        $transaction = $this->em->getRepository(Transaction::class)->findOneBy(['id' => $id, 'deleted' => false]);
+        if (!$transaction instanceof Transaction) {
+            throw new NotFoundHttpException("Transaction with id '{$id}' not found!");
+        }
+
+        return $this->render('transaction/transaction.html.twig', ['transaction' => $transaction]);
     }
 
     #[Route(path: '/edit/{id}', methods: ['GET', 'PATCH'], priority: 10)]
@@ -74,7 +92,9 @@ class TransactionController extends AbstractController
         $form = $this->createForm(
             TransactionType::class,
             $transaction,
-            ['action' => $this->generateUrl('app_transaction_edit', ['id' => $transaction->getId()])]
+            [
+                'action' => $this->generateUrl('app_transaction_edit', ['id' => $transaction->getId()]),
+            ]
         );
 
         if ($request->isMethod('PATCH')) {
@@ -106,11 +126,25 @@ class TransactionController extends AbstractController
 
                 $this->em->flush();
 
-                return $this->render('transaction/transactionWithUpdate.html.twig', ['transaction' => $transaction, 'budget' => $this->budget]);
+                return $this->render(
+                    'transaction/transactionWithUpdate.html.twig',
+                    [
+                        'transaction' => $transaction,
+                        'budget' => $this->budget,
+                    ]
+                );
             }
         }
 
-        return $this->render('transaction/edit.html.twig', ['transaction' => $transaction, 'form' => $form]);
+        return $this->render(
+            'transaction/form.html.twig',
+            [
+                'transaction' => $transaction,
+                'form' => $form,
+                'hxPatch' => $this->generateUrl('app_transaction_edit', ['id' => $transaction->getId()]),
+                'hxTarget' => "#transaction-{$transaction->getId()}",
+            ]
+        );
     }
 
     #[Route(path: '/delete/{id}', methods: 'DELETE', priority: 10)]

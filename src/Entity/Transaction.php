@@ -34,7 +34,7 @@ class Transaction
 
     public function getId(): int
     {
-        return $this->id;
+        return $this->id ?? 0;
     }
 
     public function setId(int $id): static
