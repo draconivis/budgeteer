@@ -29,9 +29,10 @@ A simple webapp to track finances
     - [x] nice header with current budget value
     - [x] every transaction is a element of the structure (table? list? grid?)
     - [x] transaction is colored based on the impact on the budget (red / green?)
-    - [ ] style 'add transaction' form
-    - [ ] style 'edit transaction' form
-    - [ ] add cancel button to all forms
+    - [x] style 'add transaction' form
+    - [x] style 'edit transaction' form
+    - [x] add cancel button to all forms
+    - [ ] fix cancel button for "add transaction"
 
 for later
 - [ ] budget graph
@@ -52,14 +53,3 @@ for later
   - [ ] routes? (probably not)
 - [ ] dark mode
   - [ ] user can switch between light/dark mode
-- [ ] 
-  - [ ] 
-    - [ ] 
-
-## Technology
-- Symfony (duh)
-- SQLite
-- HTMX
-- FrankenPHP ?
-- Stimulus / Turbo ?
-    - for simple dom manipulation
