@@ -45,4 +45,10 @@ class BudgetController extends AbstractController
             ]
         );
     }
+
+    #[Route(path: '/addTButton', methods: 'GET')]
+    public function addTransactionButton(): Response
+    {
+        return $this->render('budget/addTransactionButton.html.twig');
+    }
 }

@@ -7,10 +7,7 @@
             <h2 class="text-xl font-semibold" id='budget-value'>Current amount: {{ budget.currentValue / 100 }}
                 €</h2>
             <div id="add-transaction" class="my-4">
-                <button class="bg-ctp-surface2 text-ctp-blue rounded border border-ctp-surface0 p-1" hx-swap="outerHTML"
-                        hx-get="{{ url('app_transaction_new') }}">
-                    <i class="fa-solid fa-plus"></i> Add Transaction
-                </button>
+                {% include('budget/addTransactionButton.html.twig') %}
             </div>
             <div id="budget-transactions">
                 {% if budget.transactions|length > 0 %}

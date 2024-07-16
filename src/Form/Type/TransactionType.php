@@ -22,7 +22,6 @@ class TransactionType extends AbstractType
     {
         // dd($options);
         $transactionId = $options['data']->getId();
-        $getRoute = $this->router->generate('app_transaction_get', ['id' => $transactionId]);
 
         $builder
             ->add('title', TextType::class, ['label' => 'For what?'])
@@ -30,17 +29,32 @@ class TransactionType extends AbstractType
             ->add('date', DateTimeType::class, ['label' => 'date and time of transaction:'/* , 'date_widget' => 'choice' */])
             ->add('reimbursement', CheckboxType::class, ['label' => 'Is this a reimbursement?', 'required' => false])
             ->add('save', SubmitType::class)
-            ->add(
+        ;
+
+        if (0 === $transactionId) {
+            $builder->add(
+                'cancel',
+                ButtonType::class,
+                [
+                    'attr' => [
+                        'hx-target' => '#add-transaction',
+                        'hx-swap' => 'innerHTML',
+                        'hx-get' => $this->router->generate('app_budget_addtransactionbutton'),
+                    ],
+                ]
+            );
+        } else {
+            $builder->add(
                 'cancel',
                 ButtonType::class,
                 [
                     'attr' => [
                         'hx-target' => "#transaction-{$transactionId}",
                         'hx-swap' => 'outerHTML',
-                        'hx-get' => $getRoute,
+                        'hx-get' => $this->router->generate('app_transaction_get', ['id' => $transactionId]),
                     ],
                 ]
-            )
-        ;
+            );
+        }
     }
 }
