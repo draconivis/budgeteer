@@ -32,7 +32,9 @@ A simple webapp to track finances
     - [x] style 'add transaction' form
     - [x] style 'edit transaction' form
     - [x] add cancel button to all forms
-    - [ ] fix cancel button for "add transaction"
+    - [x] fix cancel button for "add transaction"
+    - [ ] style cancel button
+    - [ ] style save button
 
 for later
 - [ ] budget graph
