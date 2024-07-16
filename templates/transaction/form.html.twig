@@ -9,20 +9,24 @@
     'hx-target': hxTarget,
 }}) }}
 {% endif %}
-<div>
+<div class="mb-2">
     {{ form_label(form.title) }}<br>
     {{ form_widget(form.title, {'attr': {'class': 'bg-ctp-surface1 rounded px-3'}}) }}
 </div>
-<div>
+<div class="mb-2">
     {{ form_label(form.value) }}<br>
     {{ form_widget(form.value, {'attr': {'class': 'bg-ctp-surface1 rounded px-3 w-28'}}) }} €
 </div>
-<div>
+<div class="mb-2">
     {{ form_label(form.date) }}<br>
     {{ form_widget(form.date, {'attr': {'class': 'bg-ctp-surface1 rounded px-3'}}) }}
 </div>
-<div>
-    {{ form_label(form.reimbursement) }}<br>
+<div class="mb-2">
+    {{ form_label(form.reimbursement) }}
     {{ form_widget(form.reimbursement, {'attr': {'class': 'bg-ctp-surface1 rounded px-3'}}) }}
+</div>
+<div class="mb-2">
+    {{ form_widget(form.save, {'attr': {'class': 'bg-ctp-green text-ctp-base rounded px-3'}}) }}
+    {{ form_widget(form.cancel, {'attr': {'class': 'bg-ctp-red text-ctp-base rounded px-3'}}) }}
 </div>
 {{form_end(form)}}

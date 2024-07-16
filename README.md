@@ -25,7 +25,7 @@ A simple webapp to track finances
   - [ ] footer
     - [ ] copyright?
     - [ ] links
-  - [ ] dashboard
+  - [x] dashboard
     - [x] nice header with current budget value
     - [x] every transaction is a element of the structure (table? list? grid?)
     - [x] transaction is colored based on the impact on the budget (red / green?)
@@ -33,8 +33,8 @@ A simple webapp to track finances
     - [x] style 'edit transaction' form
     - [x] add cancel button to all forms
     - [x] fix cancel button for "add transaction"
-    - [ ] style cancel button
-    - [ ] style save button
+    - [x] style cancel button
+    - [x] style save button
 
 for later
 - [ ] budget graph
