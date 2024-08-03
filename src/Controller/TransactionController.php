@@ -170,6 +170,6 @@ class TransactionController extends AbstractController
 
         $this->em->flush();
 
-        return $this->render('budget/budgteValueUpdate.html.twig', ['budget' => $this->budget]);
+        return $this->render('budget/budgetValueUpdate.html.twig', ['budget' => $this->budget]);
     }
 }
