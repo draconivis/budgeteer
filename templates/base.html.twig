@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Budgeteer{% endblock %}</title>
+        <title>{% block title %}budgeteer{% endblock %}</title>
         <link rel="icon" href="{{asset('images/favicon.svg')}}">
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
@@ -17,17 +17,17 @@
             <div class="flex justify-between mx-2 mt-2 mb-4 w-9/12">
                 <img class="h-8 w-auto" src="{{asset('images/favicon.svg')}}" alt="Budgeteer">
                 <div class="flex space-x-4">
-                    <a href="{{path('app_home_home')}}" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-ctp-surface0 hover:text-ctp-peach">Home</a>
-                    <a href="{{path('app_budget_dashboard')}}" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-ctp-surface0 hover:text-ctp-peach">Dashboard</a>
+                    <a href="{{path('app_home_home')}}" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-ctp-surface0 hover:text-ctp-peach">home</a>
+                    <a href="{{path('app_budget_dashboard')}}" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-ctp-surface0 hover:text-ctp-peach">dashboard</a>
+                    <a href="https://gitlab.com/draconivis/budgeteer" target="_blank" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-ctp-surface0 hover:text-ctp-peach"><i class="fa-brands fa-gitlab"></i></a>
                 </div>
             </div>
         </nav>
-
         {% block body %}{% endblock %}
-        <footer class="">  {# TODO: top border, different bg, some inline links #}
-            <div class=""> {# TODO make it stick to the bottom#}
-            HELLO
-            </div>
+        <footer class="bg-ctp-mantle mt-5 p-5"> 
+            <p class="text-center">
+            made by patrick
+            </p>
         </footer>
     </body>
 </html>

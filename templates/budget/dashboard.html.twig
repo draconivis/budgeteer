@@ -3,15 +3,15 @@
 {% block body %}
     <div class="flex justify-center">
         <div class="flex flex-col w-9/12 h-svh">
-            <h1 class="text-2xl font-bold my-4">Budget Dashboard</h1>
-            <h2 class="text-xl font-semibold" id='budget-value'>Current amount: {{ budget.currentValue / 100 }}
+            <h1 class="text-2xl font-bold my-4">budget dashboard</h1>
+            <h2 class="text-xl font-semibold" id='budget-value'>current amount: {{ budget.currentValue / 100 }}
                 €</h2>
             <div id="add-transaction" class="my-4">
                 {% include('budget/addTransactionButton.html.twig') %}
             </div>
             <div id="budget-transactions">
                 {% if budget.transactions|length > 0 %}
-                    <h3 class="text-lg text-ctp-mauve font-normal mb-4">Transactions:</h3>
+                    <h3 class="text-lg text-ctp-mauve font-normal mb-4">transactions:</h3>
                     <div>
                         {% for transaction in budget.transactions|sort((a, b) => b.date <=> a.date)|slice(0,10) %}
                             {% if not transaction.deleted %}{% include('transaction/transaction.html.twig') %}{% endif %}
