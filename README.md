@@ -1,44 +1,27 @@
 # Budgeteer
 
-A simple webapp to track finances
+A (very) simple webapp to track finances.
 
-## TODO
+I wanted to play around with htmx and symfony, so here we are.
 
-- [x] add budget entity
-- [x] basic crud of transactions
-  - [x] create
-  - [x] read
-  - [x] update
-  - [x] delete
-- [x] transactions are assigned to the budget
-- [x] transactions are deducted from budget
-  - [x] normal ones are substracted
-  - [x] reimbursements are added back
-- [x] budget dashboard
-  - [x] list of all transactions
-  - [x] transactions have edit/delete button
-  - [x] total view of spending / reimbursement
-- [ ] make everything look nice
-  - [x] navigation
-    - [x] logo
-    - [x] page links
-  - [ ] footer
-    - [ ] copyright?
-    - [ ] links
-  - [x] dashboard
-    - [x] nice header with current budget value
-    - [x] every transaction is a element of the structure (table? list? grid?)
-    - [x] transaction is colored based on the impact on the budget (red / green?)
-    - [x] style 'add transaction' form
-    - [x] style 'edit transaction' form
-    - [x] add cancel button to all forms
-    - [x] fix cancel button for "add transaction"
-    - [x] style cancel button
-    - [x] style save button
+## technologies
 
-for later
+- symfony
+- htmx
+- tailwind
+- sqlite
+
+color palette is [catpuccin](https://catppuccin.com/)
+
+## resources that helped me out:
+
+- [making a spa with htmx and symfony](https://jolicode.com/blog/making-a-single-page-application-with-htmx-and-symfony)
+- [htmx & symfony: the pleasure of purified web development](https://lukasrotermund.de/posts/symfony-and-htmx-poc/) | [the poc repo](https://github.com/tasko-products/poc-symfony-htmx)
+
+## further possible improvements
+
 - [ ] budget graph
-  - [ ] graph is disaplyed next to the budget value
+  - [ ] graph is displayed next to the budget value
   - [ ] transaction of the last seven days are used
   - [ ] grouped by day + hours
 - [ ] tagging
