@@ -16,7 +16,7 @@ use Symfony\Component\Translation\Exception\NotFoundResourceException;
 #[Route(path: '/transaction')]
 class TransactionController extends AbstractController
 {
-    private Budget $budget;
+    private readonly Budget $budget;
 
     public function __construct(private readonly EntityManagerInterface $em)
     {
@@ -73,7 +73,7 @@ class TransactionController extends AbstractController
     {
         $transaction = $this->em->getRepository(Transaction::class)->findOneBy(['id' => $id, 'deleted' => false]);
         if (!$transaction instanceof Transaction) {
-            throw new NotFoundHttpException("Transaction with id '{$id}' not found!");
+            throw new NotFoundHttpException(sprintf("Transaction with id '%d' not found!", $id));
         }
 
         return $this->render('transaction/transaction.html.twig', ['transaction' => $transaction]);
@@ -84,7 +84,7 @@ class TransactionController extends AbstractController
     {
         $transaction = $this->em->getRepository(Transaction::class)->findOneBy(['id' => $id, 'deleted' => false]);
         if (!$transaction instanceof Transaction) {
-            throw new NotFoundHttpException("Transaction with id '{$id}' not found!");
+            throw new NotFoundHttpException(sprintf("Transaction with id '%d' not found!", $id));
         }
 
         $oldTransaction = clone $transaction;
@@ -142,7 +142,7 @@ class TransactionController extends AbstractController
                 'transaction' => $transaction,
                 'form' => $form,
                 'hxPatch' => $this->generateUrl('app_transaction_edit', ['id' => $transaction->getId()]),
-                'hxTarget' => "#transaction-{$transaction->getId()}",
+                'hxTarget' => '#transaction-'.$transaction->getId(),
             ]
         );
     }
@@ -152,7 +152,7 @@ class TransactionController extends AbstractController
     {
         $transaction = $this->em->getRepository(Transaction::class)->findOneBy(['id' => $id, 'deleted' => false]);
         if (!$transaction instanceof Transaction) {
-            throw new NotFoundHttpException("Transaction with id '{$id}' not found!");
+            throw new NotFoundHttpException(sprintf("Transaction with id '%d' not found!", $id));
         }
 
         // undo the changes this transaction caused

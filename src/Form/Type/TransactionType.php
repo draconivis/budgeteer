@@ -2,6 +2,8 @@
 
 namespace App\Form\Type;
 
+use App\Entity\Transaction;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -15,13 +17,19 @@ use Symfony\Component\Routing\RouterInterface;
 class TransactionType extends AbstractType
 {
     public function __construct(
-        private RouterInterface $router
+        private readonly RouterInterface $router
     ) {}
 
+    #[\Override]
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        // dd($options);
-        $transactionId = $options['data']->getId();
+        $transaction = $options['data'];
+        if (!$transaction instanceof Transaction) {
+            throw new Exception('No Transaction passed to Form!');
+        }
+
+        /** @var int $transactionId */
+        $transactionId = $transaction->getId();
 
         $builder
             ->add('title', TextType::class, ['label' => 'For what?'])
@@ -49,7 +57,7 @@ class TransactionType extends AbstractType
                 ButtonType::class,
                 [
                     'attr' => [
-                        'hx-target' => "#transaction-{$transactionId}",
+                        'hx-target' => '#transaction-'.$transactionId,
                         'hx-swap' => 'outerHTML',
                         'hx-get' => $this->router->generate('app_transaction_get', ['id' => $transactionId]),
                     ],
